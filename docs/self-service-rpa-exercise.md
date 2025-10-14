@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Create a Self Service Button for RPA'
+sidebar_label: 'Exercise: Create a Self Service Button for RPA'
 hide_title: 'true'
 ---
 
-## Create a Self Service Button for an OpCon RPA Job
+## Exercise: Create a Self Service Button for an OpCon RPA Job
 
 ### Build the RPA Schedule and Job
 

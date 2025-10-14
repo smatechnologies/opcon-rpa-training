@@ -17,3 +17,14 @@ Using Self Service for RPA provides:
 - Maintains control through Role-based access control
 - Centralized monitoring and alerted
 
+The Self Service Button workflow should move as follows:
+
+**Self Service Button --> OpCon RPA Schedule and Job --> RPA Task**
+
+##### Self Service Button
+
+![](../static/img/rpaselfservicebtn.png)
+
+##### Self Service Button Details Screen
+
+![](../static/img/rpaselfservicedetails.png)
