@@ -7,35 +7,18 @@ hide_title: 'true'
 
 ### Build the RPA Schedule and Job
 
-Before linking it to the button, ensure the RPA job is fully configured.
+Before linking it to the button, ensure the RPA job is fully configured. For this exercise, use the Schedule and Job created in the **Build an OpCon RPA Job** exercise. Verify that the Schedule has built and is open in the daily.
 
-Define the RPA Job in the Schedule
+### Create a Null Job
 
-Use OpCon Studio to create the RPA job.
-Include all necessary parameters, dependencies, and scripts (e.g., VisualCron macros, REST API calls).
-
-Test the Job Independently
-
-Run the job manually to confirm it executes correctly.
-
-
-### Create a “KeepScheduleOpen” Job
-
-This job ensures the schedule remains open so that the Self Service button can dynamically add jobs.
-
-1. Create a Null Job
-2. In OpCon Studio, create a new job within the target schedule.
-Name it something like **KeepScheduleOpen**.
-3. Set Frequency
-
-Assign a frequency to the job (e.g., every 5 minutes or hourly).
-This keeps the schedule active and ready to accept new jobs.
-
-4. Set Start Offset
-
-Configure a start offset to ensure the job runs slightly after the schedule opens.
-This prevents premature closure of the schedule.
-
+1. Create a new **Null Job** within the same schedule as the RPA Job (**RPARateSched**).
+    - Name: **KeepScheduleOpen**.
+    - *This job ensures the schedule remains open so that the Self Service button can dynamically add jobs*
+2. Assign a Frequency to the job.
+    - Give the Job a Frequency of **OnRequest**.
+    - *This keeps the schedule active and ready to accept new jobs*
+3. Configure a start offset to ensure the job runs slightly after the schedule opens.
+    - *This prevents premature closure of the schedule*
 
 ### Create the Self Service Button
 
@@ -43,29 +26,27 @@ This button will trigger the RPA job dynamically.
 
 1. Open OpCon Self Service Portal
 2. Navigate to the Self Service configuration panel.
-3. Create a New Button
-4. Name it clearly (e.g., “Run RPA Job”).
-5. Configure the Button Action
+3. Create a New Button and name it **RPA Rate Button**.
+4. Create a **$JOB:ADD Event**
+    - Schedule Name: **RPARateSched**.
+    - Job Name: **RPARateJob**.
+    - Frequency Name: **Mon-Fri-N** *(The Frequency for the Event and the OpCon Job must match)*.
 
-Use the Add Job Event:
+:::info Note
 
-Specify the Schedule Name (where the RPA job resides).
-Specify the Job Name (the RPA job you created).
-Specify the Frequency Name (same as used in the job setup).
+When builing a Self Service button in your environment, remember to set Permissions and Visibility
+- Assign the button to appropriate user roles
+- Ensure only authorized users can trigger the job
 
-Set Permissions and Visibility
-
-Assign the button to appropriate user roles.
-Ensure only authorized users can trigger the job.
-
+:::
 
 ### Validate the Workflow
 
-1. Run the Button
+#### Run the Button
 
-Click the button to test the job addition.
-Confirm that the job is added to the open schedule and executes as expected.
+1. Click the button to test the Job addition.
+2. Confirm that the Job is added to the open Schedule and executes as expected.
 
 ### Monitor Execution
 
-Use the OpCon dashboard to track job status and logs.
+Use the OpCon dashboard to track job status and logs if necessary.
