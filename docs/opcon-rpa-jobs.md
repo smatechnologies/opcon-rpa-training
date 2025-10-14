@@ -1,10 +1,13 @@
 ---
 sidebar_label: 'OpCon RPA Jobs'
-hide_title: 'false'
+hide_title: 'true'
 ---
 
-# OpCon RPA Job Orchestration
+## OpCon RPA Job Orchestration
 
+OpCon RPA Robot Tasks can be orchestrated with OpCon to run unattended through configuration of an OpCon Schedule and Job or attended with the use of an OpCon Self Service button.
+
+RPA Robots are imported into OpCon by creating a *Webservices* **Script Type** and importing Robots from the RPA Tray Client into OpCon as executable scripts.
 
 ### Configure OpCon RPA Agent (In OpCon Solution Manager)
 

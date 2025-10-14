@@ -1,51 +1,65 @@
 ---
-sidebar_label: 'Create an Excel Data Robot Task'
-hide_title: 'false'
+sidebar_label: 'Example: Excel Data Robot Task'
+hide_title: 'true'
 ---
 
-# Exercise 2: Create an Excel Data Robot Task
+## Example: Excel Data Robot Task
 
-## Objective
+:::info Note
+
+This Example serves as a guide to perform an Excel task. It is an exercise that can be replicated for practice in the user's own system.
+
+The training machine for this course does NOT have Excel installed.
+
+:::
+
+## Purpose and Method
 
 Use an OpCon RPA Robot Task to pull Excel Cell data from a workbook and transfer it to a new/different workbook
 
-## Instructions
+This is example utilizes two Excel Files:
 
-### Set Up the Excel Source File
+* A **Source File** that contains the data to be transferred.
 
-1. Create a new Excel Workbook.
-2. Name the Excel Workbook **rpasourcebook**.
-3. In Cell A1 enter **Bank**.
-4. In Cell B1 enter **Rate**.
-5. In Cell A2 enter **Amegy**.
-6. In Cell B2 enter **6.5**.
-7. Save the Workbook.
+![](../static/img/rpa-excelsourcefile.png)
 
-### Set up the Excel Target File
+* A **Target File** to which the data will be transferred.
 
-1. Create a new Excel Workbook.
-2. Name the Excel Workbook **rpatargetbook**
-3. In Cell A1 enter **Bank**.
-4. In Cell B1 enter **Rate**.
-5. In Cell A2 enter **Amegy**.
-6. Leave Cell B2 blank.
-7. Save the Workbook.
+![](../static/img/rpa-exceltargetfile.png)
 
-### Create a Variable
+### Create the Variable
 
-1. Launch the OpCon RPA Tray Client.
-2. Create a new Robot Task and name it **excel-task**
-3. Select the **Robot** tab.
-4. In the bottom left corner of the tray client, click the **Variables** button.
-5. In the RPA Variables screen, click **Add User Variable**.
-6. Name the Variable **interest_rate_amegy**.
-7. Leave the Variable value blank.
-8. Click the **Add** button.
+A **User Variable** must be created to store the data to be transferred.
+
+In this case, we are transferring an interest rate value from the **Source File** to the **Target File**.
+
+We can create the **User Variable** by creating a new Robot Task and clicking the **Variables** button in the bottom left-hand corner of the Tray Client.
+
+#### Create the Excel Robot Task
+
+![](../static/img/rpa-createexcelrobot.png)
+
+#### Add the User Variable
+
+![](../static/img/rpa-varinterestrate_amegy.png)
+
+#### View the Variable Key and Preview in the Variable List
+
+![](../static/img/rpa-varinterestrate_preview.png)
+
 
 ### Create the RPA Task to Read the Cell
 
+In the **Robot Designer** tab we can drag and drop **Task Actions** to build the robot or we can utilize the **Record** tool. 
+
+Below are the steps to build with the drag and drop method.
+
 1. Select an Excel **Open Workbook** task from the left menu and drag it into the **Sequence** window.
 2. In the **File name** box enter the path to your created workbook (**rpasourcebook**).
+
+![](../static/img/rpa-excelopen.png)
+
+
 3. Select an **Excel Cell - Get Cell Value** task from the left menu and drag it into the **Sequence** window below the **Open Workbook** task.
 4. Click the **Click to select Excel element** link in the task window.
 5. With the source workbook and sheet in focus,click on the cell you wish to retrieve the value from.
@@ -54,14 +68,27 @@ Use an OpCon RPA Robot Task to pull Excel Cell data from a workbook and transfer
 8. Select or verify the **Variable type** as **User**.
 9. Select or verify the **Variable** as **interest_rate_amegy**.
 
+![](../static/img/rpa-excelgetcell.png)
+
+![](../static/img/rpa-selectcell.png)
+
 ### Create the RPA Task to Set the Cell 
 
 1. Select an Excel **Open Workbook** task from the left menu and drag it into the **Sequence** window below the **Get Cell Value** task.
 2. In the **File name** box enter the path to your created workbook (**rpatargetbook**).
+
+![](../static/img/rpa-excelopenbook.png)
+
 3. Select an **Excel Cell - Set Cell Value** task from the left menu and drag it into the **Sequence** window below the **Open Workbook** task.
+
+![](../static/img/rpa-excelsetcell.png)
+
 4. Click the **Click to select Excel element** link in the task window.
 5. With the target workbook and sheet in focus, click on the cell you wish to set cell value on.
 6. Hold down the CTRL button and left-click at the same time.
+
+![](../static/img/rpa-setcell.png)
+
 7. Back in the Edit Task Screen - Verify the Cell address.
 8. Select or verify the **Value** as the **User Variable** `{USERVAR(interest_rate_amegy)}`.
 
@@ -71,9 +98,11 @@ Use an OpCon RPA Robot Task to pull Excel Cell data from a workbook and transfer
 2. Click the **Click to select Excel element** link in the task window.
 3. Verify the Workbook name to save is correct.
 
+![](../static/img/rpa-saveworkbook.png)
+
 ### Test the Robot
 
-1. Click **Test Run** in the bottom right hand corner of the Robot **Edit Taks** screen.
+1. Click **Test Run** in the bottom right hand corner of the Robot **Edit Task** screen.
 2. The Robot will run the sequence.
 3. Verify that the sequence has completed successfully by checking that the interest rate variable has been set in **rpatargetbook** cell **B2** and that it matches the value in **rpasourcebook** cell **B2**.
 

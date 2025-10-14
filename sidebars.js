@@ -7,7 +7,11 @@ module.exports = {
     items: [  
     'first-steps',
     'attended-unattended',
+    'tray-client-overview',
+    'tasks-page',
+    'conditions-and-loops',
     'variables',
+    'create-a-variable',
     ]
   },
   {
@@ -15,9 +19,10 @@ module.exports = {
       label: 'RPA Task Types',
       items: [
     'web-macro-tasks',
-    'web-macro-exercise',
+    'web-macro-download-file',
+    'web-macro-get-rate',
     'robot-tasks',
-    'robot-task-exercise',
+    'excel-robot-example',
     'scan-document-tasks',
       ],
     },
@@ -31,5 +36,6 @@ module.exports = {
     'self-service-rpa-exercise',
       ],
     },
+    'lab',
   ],
 };

@@ -1,9 +1,10 @@
 ---
 slug: '/'
-sidebar_label: 'OpCon RPA Training'
+sidebar_label: 'Introduction to OpCon RPA'
+hide_title: 'true'
 ---
 
-# OpCon RPA Training
+## OpCon RPA Training
 
 The OpCon Robotic Process Automation (RPA) client is a powerful extension of the OpCon workload automation platform, designed to eliminate manual gaps and enable end-to-end automation across desktop, web, and hybrid environments. 
 

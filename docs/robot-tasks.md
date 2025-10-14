@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Robot Tasks'
-hide_title: 'false'
+hide_title: 'true'
 ---
 
 ## Robot Tasks

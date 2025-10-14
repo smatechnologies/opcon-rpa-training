@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Web Macro Tasks'
-hide_title: 'false'
+hide_title: 'true'
 ---
 
 ## Web Macro Tasks

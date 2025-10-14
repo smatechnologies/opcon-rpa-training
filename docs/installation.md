@@ -1,9 +1,9 @@
 ---
 sidebar_label: 'Installation'
-hide_title: 'false'
+hide_title: 'true'
 ---
 
-# Installation - OpCon RPA
+## Installation - OpCon RPA
 
 ### Install OpCon RPA for Cloud
 The RPA Agent and Netcom Relay will need to be installed on the windows system that will be responsible for hosting the server and/or client and executing the RPA workflow.

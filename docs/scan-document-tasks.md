@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Scan Document Tasks'
-hide_title: 'false'
+hide_title: 'true'
 ---
 
 ## Scan Document Tasks
