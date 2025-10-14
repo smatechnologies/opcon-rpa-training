@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Build an OpCon RPA Job'
+sidebar_label: 'Exercise: Build an OpCon RPA Job'
 hide_title: 'true'
 ---
 
