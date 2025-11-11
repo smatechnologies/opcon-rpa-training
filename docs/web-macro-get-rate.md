@@ -7,7 +7,11 @@ hide_title: 'true'
 
 ## Objective 
 
-Use an OpCon RPA Web Macro to pull an interest rate from a bank website
+Create an OpCon RPA Web Macro Task
+
+## Summary 
+
+Use an OpCon RPA Web Macro to pull an interest rate from a bank website and store it in a variable.
 
 ### Instructions 
 

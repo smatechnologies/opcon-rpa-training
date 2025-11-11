@@ -8,7 +8,7 @@ hide_title: 'true'
 1. In Solution Manager, create a Schedule named **RPARateSched**.
 2. Create a Job within the Schedule named **RPARateJob**.
 3. Set the Job Type as **RPA**.
-4. Set the Integration as **RPA-Agent**.
+4. Set the Integration as **RPAAgent**.
 5. Set the Script Runner as **RPA - Robot**.
 6. Set the Script as **get-interest-rate**.
 7. Save the Job.

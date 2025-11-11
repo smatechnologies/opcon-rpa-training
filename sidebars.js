@@ -6,6 +6,7 @@ module.exports = {
     label: 'Definitions and Configuration',
     items: [  
     'first-steps',
+    'installation',
     'attended-unattended',
     'tray-client-overview',
     'tasks-page',

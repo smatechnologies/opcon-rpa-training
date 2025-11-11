@@ -5,11 +5,15 @@ hide_title: 'true'
 
 ## Exercise: Create a Web Macro Task to Download a File
 
-### Objective 
+## Objective 
 
-Use an OpCon RPA Web Macro to download a file from website
+Download a File with a Web Macro Task
 
-### Instructions 
+## Summary
+
+Use an OpCon RPA Web Macro to download a file from website.
+
+##=# Instructions 
 
 #### Create the Web Macro Job and Task
 

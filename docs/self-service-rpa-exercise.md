@@ -5,6 +5,14 @@ hide_title: 'true'
 
 ## Exercise: Create a Self Service Button for an OpCon RPA Job
 
+## Objective
+
+Create a Self Service Button for an OpCon RPA Job
+
+## Summary
+
+Use a Self Service Button to run an OpCon RPA Job. Run and validate the Workflow.
+
 ### Build the RPA Schedule and Job
 
 Before linking it to the button, ensure the RPA job is fully configured. For this exercise, use the Schedule and Job created in the **Build an OpCon RPA Job** exercise. Verify that the Schedule has built and is open in the daily.

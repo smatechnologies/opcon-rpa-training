@@ -1,74 +1,150 @@
 ---
-sidebar_label: 'Installation'
+sidebar_label: 'Exercise: Installation'
 hide_title: 'true'
 ---
 
-## Installation - OpCon RPA
+## Exercise: Install RPA Agent
 
-### Install OpCon RPA for Cloud
-The RPA Agent and Netcom Relay will need to be installed on the windows system that will be responsible for hosting the server and/or client and executing the RPA workflow.
+## Objective
 
-You should have 3 items ready for before you get started with the RPA cloud setup. 
+Install and configure the RPA Agent
+ 
+## Summary
 
-1.	The NetCom Relay installer, <ins>SMANetcomRelay.exe</ins>.  The NetCom Relay installer is not needed if you are not integrating RPA with a cloud instance of OpCon CORE Automate/Solution Manager.
-  1.	On your Windows Computer open the command prompt and choose “Run as Administrator”.
-  2.	When prompted if you’d like to allow this app to make changes to your device, choose “Yes”.
-2.	The ACS Plugin DLL named <ins>sma.acs.OpConRPA.dll</ins>.
-3.	The RPA Agent installer named <ins>RPAAgent.1.0.0</ins>.
+Install the files needed to run the RPA Agent. Create a special RPA User to run the RPA Jobs and configure the RPA Tray Client so that RPA Tasks can be defined.
 
-#### Solution Manager Setup
-1.	Log into Solution Manager
-2.	Navigate to the Access Management screen
-  1.	On the USER tab select the user who will be configuring the RPA connection.
-  2.	In the context of the selected user click the SETTINGS tab.
-  3.	Ensure the selected user has “Enable external tokens” checked.
-  4.	If this option was not checked and the user is currently signed in, this user will need to sign back in before this change will take affect.
-3.	Navigate to your user profile page.
- 1.	On this page within the ACCOUNT tab ensure that you have a password set.
- 2.	Make sure you remember this password, you’ll need it later.
- 3.	Click to save.
- 4.	Navigate to the EXTERNAL TOKEN tab.
- 5.	Leave the API Token option selected and click “Generate”.
- 6.	Copy this token to your clipboard AND save it in a safe place, you will need it later. It will be used for the Relay set up
- 7.	Click OK to dismiss the window.
- 8. For instructions on how to set up Relay, [click here](https://help.smatechnologies.com/opcon-relay#install)
+## Instructions
 
-#### RPA Agent and Relay Connection setup
-1.	In your Windows File Explorer Navigate to C:\Programdata.   
-2.	Drill down into the OpConxps directory until you reach the Plugins directory.
-3.	Open the Plugins directory, this is where you’re going to put the RPA Plugin DLL file. For On-Prem users this should be C:\ProgramData\OpConxps\SAM\plugins.
- 1.	Navigate to where you have the The ACS Plugin DLL.  It is called sma.acs.OpConRPA.dll. 
- 2.	Move this .dll file into the plugins directory shown in step 2 of this section.
+### Download Files
 
-#### Testing what you’ve set up so far:
-1.	Opening Solution Manager.
-2.	Navigate to the Library > Agents.
-3.	Click Add to add a new Agent.
- 1.	Give your agent a name, remember this name, you’ll need it later. 
- 2.	Select RPA from the type drop down above General Settings.
- 3.	Open the RPA Settings section at the bottom of the page.
-  1.	Leave this open, you’ll come back to it shortly.
+1. Open a File Explorer window and navigate to ``C:\Users\smauser\Downloads\OpConWebInstaller``
 
-#### FINALLY the RPA Installer
-1.	Double click on the RPA Agent Installer.  It is named RPAAgent1.0.0 (though the version number might differ)
-2.	When prompted if you’d like to allow this app to make changes to your device, choose “Yes”.
-3.	When the installation is complete you will see the RPA user interface pop up on your screen.
-4.	On the left side of the RPA interface click “Settings”.
-![Activate License](../static/img/RPAInstaller_Step4.png) 
-5.	When on the “Settings” screen make sure you’re on the RPA Agent tab and copy the value out of the Https URI field.
-![Activate License](../static/img/RPAInstaller_Step5.png) 
-6.	Paste that URI value into the RPA Server URI in Solution Manager.
-![Activate License](../static/img/RPAInstaller_Step6.png) 
-7.	Back in the RPA interface, click generate token.  Note, that this automatically copies the token to your clipboard.
-![Activate License](../static/img/RPAInstaller_Step7.png) 
-8.	Paste that token in the API Token field within Solution Manager.
-![Activate License](../static/img/RPAInstaller_Step8.png) 
-9.	Click to save your Solution Manager changes
-10.	In the RPA “Settings” interface click on the OpCon API tab.
-![Activate License](../static/img/RPAInstaller_Step10.png) 
-11.	In the OpCon API URL field enter the same fully qualified domain name that you set in the Solution Manager Setup step 9. For On-Prem this is likely the base domain of your Solution Manager instance.
-12.	In the OpCon API User field enter the username you’re logged in with your instance of Solution Manager.
-13.	In the OpCon API Password field enter the password you set in step 3.2 of the Solution Manager Setup section.
-14.	In the OpCon Agent Name field enter the name of the Agent you just created in step 3.1 of the Testing What You’ve Setup So Far.
-15.	Click Get OpCon API Token in the lower right corner of the RPA interface.
-16.	You should receive a success message at this point!!! Congratulations you’re ready to go!!!
+2. Launch the **OpCon Web Installer.exe**
+
+3. Click **Next**
+
+4. Select **Download** from the drop-down for the following items:
+
+  * SMA OpCon RPA Agent
+
+  * RPA Integration
+
+5. Click **Next**
+
+6. Click **Next**
+
+7. Select **Finish** after the download is complete.
+
+
+### Install the DLL
+
+8. In the File Explorer, navigate to ``C:\Users\smauser\Downloads\OpCon Releases\Integrations\RPA\1.0.0``
+
+9. Unzip the **rpa.zip** file
+
+10. Copy the file and paste it into the ``C:\ProgramData\OpConxps\SAM\plugins`` directory
+
+
+### Configure the User
+
+11. Launch Solution Manger, use the **Log In With Windows** button to log in
+
+12. Navigate to **Library**, **Access Manager**, **Users**
+
+13. Click the **+** to add a new user with the following settings:
+
+  * In the **First Name** field, enter ``RPA``
+
+  * In the **Last Name** field, enter ``User``
+
+  * In the **Username** field, enter ``RPAUser``
+
+  * In the **Password** field, enter ``password1``
+
+14. Click **Save**
+
+15. Select the **Roles** section, while viewing the User information.
+
+16. Select **Role_ocadm** and click **Save**
+
+17. Select **Settings**
+
+18. Select **Enable external tokens** and click **Save**
+
+19. Log out of Solution Manager as the current user
+
+20. Log in as the **RPAUser**
+
+
+### Start Defining the Agent
+
+21. In Solution Manger, click the **Heartbeat Icon** in the lower right corner
+
+22. Click **Add** to configure the Agent with the following settings:
+
+  * In the **Name** field, enter **RPAAgent**
+
+  * In the **Type** field, select **RPA**
+
+23. Expand **General Settings**
+
+24. In the**NetCom Name** field, enter ``<Default>``
+
+25. Expand the **RPA Settings** and keep open until the Agent is installed and the RPA Tray Client has launched
+
+ 
+### Install Agent
+
+26. In the File Explorer, navigate to ``C:\Downloads\OpCon Releases\Agents\RPA\1.0.0``
+
+27. Double click on the **RPAAgent1.0.0.msi**
+
+28. Once the Tray Client has launched, click **Settings** in the Navigation area on the left hand side
+
+
+### Finish Defining the Agent
+
+29. In the **RPA Tray Client**, copy the **Https UrI** value
+
+30. Paste the value in the **RPA Server URI** field in **Solution Manager**
+
+31. In the **RPA Tray Client**, click **Generate Token**
+
+32. Click **Yes**
+
+33. Click **Ok**
+
+34. Paste the value in the **API Token**field, in **Solution Manager**
+
+  * _This should be saved automatically and the field will appear to be blank_
+
+35. Click **Save** in the **Agent Details** screen.
+
+36. Click the **Change Communication Status** button, select **Enable Full Comm. (Job Start Enabled)
+
+
+### Define the OpConAPI Connection
+
+37. In the **RPA Tray Client**, while still in **Settings**, click **OpConAPI**
+
+38. Configure the **OpCon API Connection** with the following settings:
+
+  * In the **OpCon API URL field, enter ``https://smatraining``
+
+  * In the **OpCon API User** field, enter ``RPAUser``
+
+  * In the **OpCon API Password** field, enter ``password1``
+
+  * In the **OpCon Agent Name** field, enter ``RPAAgent``
+
+39. Click **Get OpCon API Token**
+
+40. Click **Ok**
+
+  * _These fields will become empty and the **Agent has a registered API Token** will become checked_
+
+:::info
+
+On the Agent screen in Solution Manager, the RPAAgent should show as Communicating along with the SMATraining agent.
+
+:::
