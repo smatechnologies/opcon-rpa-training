@@ -6,6 +6,9 @@ module.exports = {
   baseUrl: '/training/opcon-rpa-training/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    format: "md",
+  },
   favicon: 'img/favicon.ico',
   organizationName: 'smatechnologies',
   projectName: 'opcon-rpa-training',
